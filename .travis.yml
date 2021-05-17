@@ -5,4 +5,4 @@ services:
 before_install:
   - docker build -t docker_react -f Dockerfile.dev .
 script:
-  - docker run docker_react npm run test -- --coverage
+  - docker run -e CI=true docker_react npm run test
